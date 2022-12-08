@@ -20,23 +20,30 @@ while(u < 10) {
 
 // ## Guess The Number
 
-
 let randomIndex = Math.floor(Math.random() * 10);
+console.log(randomIndex)
 let userGuess = ``;
 
 const game = function(userGuess) {
-if(userGuess < randomIndex) {
-    console.log(`Guess higher`)
-}
-if(userGuess > randomIndex) {
-    console.log(`Guess lower`);
-}
-if(userGuess === randomIndex) {
-{console.log(`You won!`)}
-}
+    if(!userGuess) {
+        console.log(`Please enter a number to guess again`)
+    } else if(userGuess < randomIndex) {
+        console.log(`Guess higher`)
+    } else if(userGuess > randomIndex) {
+        console.log(`Guess lower`);
+    } else if(userGuess === randomIndex) {
+        console.log(`You won!`)
+    }
 }
 
-console.log(game(4))
+while(true) {
+    console.log(`Guess again!`)
+    userGuess = parseInt(prompt(`Guess here:`))
+    game(userGuess);
+    if(userGuess === randomIndex) {
+        break;
+    }
+}
 
 // You will build a basic "guess the number" game. Your game should keep asking the user to guess a number until they get it correct.
 
