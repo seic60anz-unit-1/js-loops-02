@@ -13,17 +13,31 @@
 // }
 
 // Guess The Number 
-const num = 9
-let answer = parseInt(prompt("Guess a number between 0 & 10."))
+// const num = 9
+// let answer = parseInt(prompt("Guess a number between 0 & 10."))
 
-for (let i = 1; i < 10; i++) {
-    if (i % 9 !== 0) {
-        console.log("Guess again")
-        break
-    } else if (i % 9 === 0) {
-        console.log("Congrats! You guessed it right!")
-        break
-    } 
-}
+// for (let i = 1; i < 10; i++) {
+//     if (i % 9 !== 0) {
+//         console.log("Guess again")
+//         break
+//     } else if (i % 9 === 0) {
+//         console.log("Congrats! You guessed it right!")
+//         break
+//     } 
+// }
 
 // parseInt("", 8)
+
+// Soln 
+const number = 4
+let userGuess = parseInt(prompt("Guess the number:"))
+
+while (true) {
+    if (number === userGuess) {
+        console.log("Congrats")
+        break
+    } else {
+        userGuess = parseInt(prompt("Guess the number:"))
+        console.log("Wrong! Guess again.")
+    }
+}
